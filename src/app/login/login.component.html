@@ -1,0 +1,62 @@
+<app-jumbtron
+  [titolo]="titoloLogin"
+  [sottotitolo]="sottotitoloLogin"
+></app-jumbtron>
+<!-- <div>
+  <label for="userId">User Id:</label>
+  <input
+    type="text"
+    placeholder="Nome Utente"
+    id="userId"
+    [(ngModel)]="userId"
+  />
+
+  <label for="password">Password</label>
+  <input
+    type="password"
+    placeholder="password"
+    id="password"
+    [(ngModel)]="password"
+  />
+  <button (click)="submit()" class="btn btn-primary">Submit</button>
+</div>
+<div *ngIf="!autenticato">{{ errMsg }}</div> -->
+
+<!-- <p>il tuo userId é {{  }} e la tua password è {{ password }}</p> -->
+
+<!-- form bootstrap -->
+
+<div class="container shadow p-2">
+  <div class="row">
+    <div class="col-md-6 m-3">
+      <h3>Login Form</h3>
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nome Utente"
+          id="userId"
+          [(ngModel)]="userId"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Password"
+          id="password"
+          [(ngModel)]="password"
+        />
+      </div>
+      <div class="form-group">
+        <button (click)="submit()" class="btn btn-primary">Submit</button>
+      </div>
+      <div class="form-group">
+        <a href="">Passwd dimenticata?</a>
+      </div>
+      <div class="alert alert-danger" role="alert" *ngIf="!autenticato">
+        {{ errMsg }}
+      </div>
+    </div>
+  </div>
+</div>
