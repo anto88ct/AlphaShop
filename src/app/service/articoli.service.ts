@@ -1,12 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Articoli } from '../models/articoli.models';
 
-@Component({
-  selector: 'app-articoli',
-  templateUrl: './articoli.component.html',
-  styleUrls: ['./articoli.component.css'],
+@Injectable({
+  providedIn: 'root'
 })
-export class ArticoliComponent implements OnInit {
+export class ArticoliService {
   articoli: Articoli[] = [
     {
       codart: '123456776',
@@ -17,6 +15,7 @@ export class ArticoliComponent implements OnInit {
       prezzo: 1.09,
       active: true,
       data: new Date(),
+      imageUrl: '../../assets/images/image-1.jpg'
     },
     {
       codart: '456768788',
@@ -27,6 +26,7 @@ export class ArticoliComponent implements OnInit {
       prezzo: 5.5,
       active: true,
       data: new Date(),
+      imageUrl: '../../assets/images/image-2.jpg'
     },
     {
       codart: '123456776',
@@ -37,6 +37,7 @@ export class ArticoliComponent implements OnInit {
       prezzo: 5.19,
       active: true,
       data: new Date(),
+      imageUrl: '../../assets/images/image-3.jpg'
     },
     {
       codart: '123456776',
@@ -47,10 +48,16 @@ export class ArticoliComponent implements OnInit {
       prezzo: 8.59,
       active: true,
       data: new Date(),
-    },
+      imageUrl: '../../assets/images/image-4.jpg'
+    }
   ];
+  constructor() { }
 
-  constructor() {}
+  getArticoli = () : Articoli[] => this.articoli;
 
-  ngOnInit(): void {}
+  getArticoliByCode = (codart: string): Articoli => {
+    const index = this.articoli.findIndex(articoli => articoli.codart === codart);
+    //come il filter, in base aòll'index troviamo l'articolo con il suo codart (codice)
+    return this.articoli[index];
+  }
 }

@@ -1,0 +1,18 @@
+<div class="col">
+    <div class="card card-product-grid">
+      <!-- prendo in @Input guarda grid-articoli.html (noi prendiamo [articolo]="articolo")
+      il json si trova sul service
+      -->
+        <img [src]="articolo.imageUrl" alt="" width="180" height="180" class="img-round">
+        <div class="info-wrap">
+          <a href="" class="title text-truncate">{{articolo.descrizione}}</a>
+          <div class="price-mb-2">{{articolo.prezzo | currency:'EUR'}}</div>
+            <button (click)="editArt()" class="btn btn-sm btn-light">
+                <i class="material-icons md-edit">Modifica</i>
+            </button>
+            <button (click)="deleteArt()" class="btn btn-sm btn-danger">
+                <i class="material-icons md-delete_forever">Elimina</i>
+            </button>
+        </div>
+    </div>
+</div>

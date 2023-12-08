@@ -7,4 +7,5 @@ export interface Articoli {
   prezzo: number;
   active: boolean;
   data: Date;
+  imageUrl: string;
 }

@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { WelcomeComponent } from './welcome/welcome.component';
-import { ErrorComponent } from './error/error.component';
-import { ArticoliComponent } from './articoli/articoli.component';
-import { LogoutComponent } from './logout/logout.component';
+import { LoginComponent } from '../app/pages/login/login.component';
+import { WelcomeComponent } from './pages/welcome/welcome.component';
+import { ErrorComponent } from './pages/error/error.component';
+import { ArticoliComponent } from './pages/articoli/articoli.component';
+import { LogoutComponent } from '../app/pages/logout/logout.component';
 import { RouteGuardService } from './service/route-guard.service';
+import { GridArticoliComponent } from './pages/grid-articoli/grid-articoli.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'welcome', component: WelcomeComponent, canActivate:[RouteGuardService] },
   { path: 'welcome/:userid', component: WelcomeComponent, canActivate:[RouteGuardService] },
   { path: 'articoli', component: ArticoliComponent, canActivate:[RouteGuardService] },
+  { path: 'articoli/grid', component: GridArticoliComponent, canActivate:[RouteGuardService] },
   { path: 'logout', component: LogoutComponent},
   { path: '**', component: ErrorComponent },
 ];
